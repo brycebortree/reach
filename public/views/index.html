@@ -24,6 +24,21 @@
 </head>
 <body class="hidden">
   <div id="app">{{{ reactMarkup }}}</div>
+  <script src="https://www.gstatic.com/firebasejs/3.7.2/firebase.js"></script>
+  <script>
+    require('dotenv').config();
+    // Initialize Firebase
+    var config = {
+      apiKey: process.env.FIREBASE_API_KEY,
+      authDomain: process.env.FIREBASE_AUTH_DOMAIN,
+      databaseURL: process.env.FIREBASE_DATABASE_URL,
+      storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
+      messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID
+    };
+    firebase.initializeApp(config);
+    console.log("testing dotenv", process.env.DOTENV_TEST);
+    console.log("HELLO");
+  </script>
   <script src="/js/jquery.min.js"></script>
   <script src="/js/bootstrap.min.js"></script>
   <script src="/js/clean-blog.min.js"></script>
